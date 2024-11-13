@@ -11,7 +11,7 @@ def start(): # start program
               "4 - exit\n")
         choice = input("Choose action: ")
 
-        if choice == '1':
+        if choice == '1': # menu
             p.add_data_to_file('data.txt')
         elif choice == '2':
             p.data_from_file('data.txt')

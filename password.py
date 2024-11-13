@@ -1,6 +1,6 @@
 import re
 
-
+# main class
 class Password:
     def __init__(self):
         pass
@@ -39,7 +39,7 @@ class Password:
         return password_from_file
 
     @staticmethod
-    def __password_validation(password):  # validation number
+    def __password_validation(password):  # validation password
         if re.match(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&+=])(?=.*[A-Za-z0-9@$!%*#?&+=]{8,}).+$', password):
             return True
         else:
