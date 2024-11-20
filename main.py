@@ -2,7 +2,6 @@ from password import Password
 
 p = Password()
 
-
 def start(): # start program
     while True:
         print("1 - add password to file\n"

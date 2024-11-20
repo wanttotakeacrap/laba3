@@ -7,7 +7,7 @@ class Password:
 
     def add_data_to_file(self, file_name: str):  # user input
         password = input("Enter password: ")
-        result = self.__password_validation(password)
+        result = self.password_validation(password)
 
         if result:
             with open(file_name, 'r+') as file:
@@ -28,7 +28,7 @@ class Password:
         try:
             with open(file_name, 'r') as file:
                 for line in file:
-                    if self.__password_validation(line):
+                    if self.password_validation(line):
                         counter += 1
                         password_from_file.append(line)
         except FileNotFoundError:
@@ -39,7 +39,7 @@ class Password:
         return password_from_file
 
     @staticmethod
-    def __password_validation(password):  # validation password
+    def password_validation(password):  # validation password
         if re.match(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&+=])(?=.*[A-Za-z0-9@$!%*#?&+=]{8,}).+$', password):
             return True
         else:
